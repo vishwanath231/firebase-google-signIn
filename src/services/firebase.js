@@ -17,10 +17,15 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 
 
-export const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const facebookProvider = new firebase.auth.FacebookAuthProvider();
+export const githubProvider = new firebase.auth.GithubAuthProvider();
 
+// provider.setCustomParameters({ prompt: 'select_account' });
 
+githubProvider.setCustomParameters({
+  'allow_signup': 'false'
+});
 export default firebase;
 
 
